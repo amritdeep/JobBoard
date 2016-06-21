@@ -2,6 +2,9 @@
 # This will guess the Job class  
 
 FactoryGirl.define do
+  factory :user do
+    
+  end
 	factory :job do
 		title "ROR Developer"
 		location "TX"
