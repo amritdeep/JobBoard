@@ -1,1 +1,24 @@
+<% if @job.present? %>
+
+<table border="1" >
+	<tr>
+		<th>Title</th>
+		<th>Company</th>
+		<th>Summary</th>
+		<th>Location</th>
+	</tr>
+
+	<% @job.each do |job| %>
+	<tr>
+		<td><%= job.title %></td>
+		<td><%= job.company %></td>
+		<td><%= job.summary %></td>
+		<td><%= job.location %></td>
+	</tr>
+	<% end %>
+
+</table>
+
+<% end %>
+
 <%= link_to "Post Job", new_job_path %>
