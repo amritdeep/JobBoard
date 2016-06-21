@@ -5,7 +5,7 @@ ruby "2.2.3"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', group: :development
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -39,6 +39,13 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.4'
   gem 'guard-rspec', require: false
   gem 'guard-livereload', '~> 2.5', require: false
+
+  gem 'factory_girl_rails'
+
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'pry-remote'
+  gem 'pry-nav' 
 end
 
 group :development do
@@ -50,3 +57,6 @@ group :development do
   gem 'spring'
 end
 
+group :production do 
+  gem "pg"
+end
