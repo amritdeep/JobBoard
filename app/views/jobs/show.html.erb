@@ -1,0 +1,25 @@
+<% if @job.present? %>
+
+<table border="1">
+	<tr>
+		<th>Title</th>
+		<th>Company</th>
+		<th>Location</th>
+		<th>Summary</th>
+		<th>Post Date</th>
+	</tr>
+
+	<tr>
+		<td><%= @job.title %></td>
+		<td><%= @job.company %></td>
+		<td><%= @job.location %></td>
+		<td><%= @job.summary %></td>
+		<td><%= @job.created_at %></td>
+	</tr>
+
+
+</table>
+
+<% end %>
+
+<%= link_to "Home Page", root_url %>
