@@ -1,0 +1,15 @@
+<%= form_for @job do |f| %>
+  <%= f.label :title %>:
+  <%= f.text_field :title %><br />
+
+  <%= f.label :company %>:
+  <%= f.text_field :company %><br />
+
+  <%= f.label :location %>:
+  <%= f.text_field :location %><br />
+
+  <%= f.label :summary %>:
+  <%= f.text_area :summary %><br />
+  
+  <%= f.submit %>
+<% end %>
