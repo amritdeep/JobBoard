@@ -2,9 +2,6 @@
 # This will guess the Job class  
 
 FactoryGirl.define do
-  factory :role do
-    
-  end
   factory :user do
     
   end

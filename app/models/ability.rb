@@ -29,11 +29,8 @@ class Ability
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
 
-    if user.admin? :admin
-        can :manage, :all
-    else
-        can :read, :all
-    end
+    can :manage, :all if user.role == "company"
+    can :read, :all if user.role == "employer"
 
 
   end
