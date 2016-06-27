@@ -45,6 +45,7 @@ group :development, :test do
   gem 'guard-livereload', '~> 2.5', require: false
 
   gem 'factory_girl_rails'
+  gem 'faker'
 
   gem 'pry'
   gem 'pry-rails'
