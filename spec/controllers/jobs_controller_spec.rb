@@ -15,8 +15,8 @@ RSpec.describe JobsController, type: :controller do
     	job = create(:job)
 
     	get :index
-      	expect(response).to have_http_status(:success)
-      	expect(response).to be_success
+      expect(response).to have_http_status(:success)
+      expect(response).to be_success
     	expect(response).to render_template(:index)
 
     	expect(job.title).to eql("ROR Developer")
@@ -24,6 +24,11 @@ RSpec.describe JobsController, type: :controller do
     	expect(job.summary).to eql("ROR Developer")
     	expect(job.company).to eql("My company")
     end
+
+  end
+
+  describe "Authoriazed User" do
+
 
 
   end
