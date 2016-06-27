@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
+  # get 'applicant/new'
+  # post 'applicant/create'
+
   devise_for :users
-  resources :jobs
+  resources :jobs do
+    get 'applicant/new' => "applicant#new"
+    post 'applicant/create'
+
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
