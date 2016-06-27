@@ -6,6 +6,7 @@
 		<th>Company</th>
 		<th>Summary</th>
 		<th>Location</th>
+		<th>Apply</th>
 	</tr>
 
 	<% @job.each do |job| %>
@@ -14,6 +15,7 @@
 		<td><%= job.company %></td>
 		<td><%= job.summary %></td>
 		<td><%= job.location %></td>
+		<td><%= button_to "Apply", job_applicant_new_url(job.id), method: :get %></td>
 	</tr>
 	<% end %>
 
