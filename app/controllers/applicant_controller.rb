@@ -9,10 +9,10 @@ class ApplicantController < ApplicationController
   	@applicant = @job.users.build(applicant_params)
   	@applicant.role = "employer"
   	# @applicant.save #!(validate: false)
-  	if  @applicant.present? || @applicant.save 
+  	if  @applicant.present? || @applicant.save || @job.users.present?
 	   	flash[:success] = "Your Application is sent"
 	  	redirect_to root_url
-	else
+	 else
   		flash[:notice] = "You have already applied"
   		redirect_to root_url
   	end
@@ -22,6 +22,6 @@ class ApplicantController < ApplicationController
   private
 
   def applicant_params
-  	params.require(:user).permit(:first_name, :last_name, :phone, :email, :letter)
+  	params.require(:user).permit(:first_name, :last_name, :phone, :email, :cover_letter)
   end
 end
