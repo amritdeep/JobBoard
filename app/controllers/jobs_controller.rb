@@ -15,8 +15,9 @@ class JobsController < ApplicationController
   end
 
   def create
-  	@job = current_user.jobs.build(job_param)
-  	if @job.save
+    # @job = current_user.jobs.build(job_param)
+  	@job = current_user.jobs.create(job_param)
+  	if @job.save!
   		redirect_to action: "show"	, id: @job.id
   	else
   		flash[:notice] = "Require field"
