@@ -8,9 +8,8 @@ class ApplicantController < ApplicationController
   	@job = Job.find(params[:job_id])
   	@applicant = @job.users.build(applicant_params)
   	@applicant.role = "employer"
-  	binding.pry
   	# @applicant.save #!(validate: false)
-  	if @applicant.save
+  	if  @applicant.present? || @applicant.save 
 	   	flash[:success] = "Your Application is sent"
 	  	redirect_to root_url
 	else
